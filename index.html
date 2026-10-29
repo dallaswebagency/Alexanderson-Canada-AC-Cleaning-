@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexanderson Canada | Quality Cleaners in Calgary, Alberta</title>
+<meta name="description" content="Residential and commercial cleaning in Calgary, Alberta. Natural cleaning products, teams of two trained cleaners and a 200% satisfaction guarantee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#82b840;
+  --green-deep:#5e9226;
+  --green-soft:#eef6e2;
+  --char:#404040;
+  --ink:#262626;
+  --orange:#f58a1f;
+  --paper:#fbfaf6;
+  --line:#e4e2da;
+  --head:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--char);background:var(--paper);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--head);color:var(--ink);line-height:1.04;letter-spacing:-.02em}
+.wrap{width:min(1180px,100% - 48px);margin-inline:auto}
+
+/* top bar */
+.topbar{background:var(--char);color:#e8e8e8;font-size:14px}
+.topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding:9px 0;flex-wrap:wrap}
+.topbar a:hover{color:var(--green)}
+.topbar span.sep{opacity:.35;margin:0 10px}
+
+/* header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(251,250,246,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo img{height:62px;width:auto}
+nav.main{display:flex;gap:34px;align-items:center}
+nav.main a{font-weight:500;font-size:16px;position:relative;padding:6px 0}
+nav.main a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--green);transition:width .25s}
+nav.main a:hover::after,nav.main a.on::after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700;font-size:16px;padding:15px 26px;border-radius:6px;border:2px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-green{background:var(--green);color:#1f2d0c}
+.btn-green:hover{background:var(--green-deep);color:#fff}
+.btn-dark{background:var(--char);color:#fff}
+.btn-dark:hover{background:var(--ink)}
+.btn-line{border-color:var(--char);color:var(--char)}
+.btn-line:hover{background:var(--char);color:#fff}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;width:26px;height:2px;background:var(--char);margin:6px auto;transition:.25s}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:70px 0 130px}
+.hero::before{content:"";position:absolute;right:-8%;top:0;bottom:0;width:62%;background:var(--green);clip-path:polygon(24% 0,100% 0,100% 100%,0 100%)}
+.hero::after{content:"";position:absolute;right:50%;top:0;bottom:0;width:7%;background:var(--char);clip-path:polygon(100% 0,100% 0,0 100%,60% 100%);opacity:.0}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:end}
+.hero-copy{padding-bottom:30px}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-deep);margin-bottom:22px}
+.kicker::before{content:"";width:34px;height:3px;background:var(--orange)}
+.hero h1{font-size:clamp(44px,6.2vw,86px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--green-deep);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.06em;height:.11em;background:var(--orange);border-radius:3px;transform:skewX(-18deg)}
+.hero p.lead{font-size:19px;max-width:520px;margin:28px 0 34px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-art{position:relative;min-height:520px;display:flex;align-items:flex-end;justify-content:center}
+.hero-art .couple{width:min(500px,100%);position:relative;z-index:2;filter:drop-shadow(0 18px 24px rgba(30,50,10,.28))}
+.offer{position:absolute;z-index:3;left:-2%;top:36px;background:var(--char);color:#fff;padding:22px 26px 20px;border-radius:4px;transform:rotate(-4deg);box-shadow:0 14px 30px rgba(0,0,0,.2);max-width:240px}
+.offer small{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.offer b{font-family:var(--head);font-size:64px;line-height:1;display:block;margin:4px 0 2px}
+.offer b sup{font-size:.45em;vertical-align:.8em;margin-right:2px}
+.offer span{font-size:15px;opacity:.9;line-height:1.35;display:block}
+.hero-badge{position:absolute;z-index:4;right:-4px;bottom:22px;width:128px;animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* estimate ticket */
+.ticket-wrap{position:relative;z-index:6;margin-top:-72px}
+.ticket{display:grid;grid-template-columns:230px 1fr;background:#fff;border-radius:10px;box-shadow:0 24px 60px rgba(38,38,38,.16);overflow:hidden;border:1px solid var(--line)}
+.ticket-label{background:var(--char);color:#fff;padding:30px 26px;position:relative;display:flex;flex-direction:column;justify-content:center}
+.ticket-label::after{content:"";position:absolute;right:-1px;top:0;bottom:0;width:12px;background:radial-gradient(circle at 12px 50%,transparent 0 5px,#fff 5.5px) 0 0/12px 24px repeat-y}
+.ticket-label strong{font-family:var(--head);font-size:34px;line-height:1;font-weight:800}
+.ticket-label strong span{color:var(--orange);display:block}
+.ticket-label strong span+span{color:var(--green)}
+.ticket form{display:grid;grid-template-columns:1fr 1fr auto;gap:18px;align-items:end;padding:30px 34px}
+.field label{display:block;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;color:var(--char)}
+.field select,.field input{width:100%;font:inherit;font-size:17px;padding:14px 16px;border:2px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink);appearance:none;-webkit-appearance:none}
+.field select{background-image:linear-gradient(45deg,transparent 50%,var(--char) 50%),linear-gradient(135deg,var(--char) 50%,transparent 50%);background-position:calc(100% - 22px) 52%,calc(100% - 16px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+.field select:focus,.field input:focus{outline:none;border-color:var(--green)}
+
+/* why */
+.why{padding:120px 0 70px}
+.why .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+.soap{position:relative;background:var(--green-soft);border-radius:6px;padding:46px 30px 30px;transform:rotate(-2deg)}
+.soap img{mix-blend-mode:multiply;width:100%}
+.soap::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--green);border-radius:6px;z-index:-1}
+.soap figcaption{position:absolute;left:24px;top:-18px;background:var(--orange);color:#fff;font-family:var(--head);font-weight:700;padding:8px 16px;border-radius:4px;font-size:15px;transform:rotate(3deg)}
+.why h2{font-size:clamp(34px,4.2vw,56px);margin-bottom:34px}
+.why h2 em{font-style:normal;color:var(--green-deep)}
+.reasons{list-style:none;border-top:2px solid var(--char)}
+.reasons li{display:grid;grid-template-columns:70px 1fr;gap:10px;padding:26px 0;border-bottom:1px solid var(--line)}
+.reasons .n{font-family:var(--head);font-weight:800;font-size:40px;color:var(--green);line-height:1}
+.reasons h3{font-size:24px;margin-bottom:6px}
+
+/* services */
+.services{padding:70px 0 120px}
+.services .wrap{display:grid;grid-template-columns:340px 1fr;gap:70px}
+.services .side{position:sticky;top:120px;align-self:start}
+.services h2{font-size:clamp(38px,4.6vw,64px);margin-bottom:22px}
+.services .side p{margin-bottom:28px}
+.rows a{display:grid;grid-template-columns:64px 1fr 44px;align-items:center;gap:14px;padding:30px 24px;border-bottom:1px solid var(--line);transition:background .25s,padding .25s}
+.rows a:first-child{border-top:2px solid var(--char)}
+.rows .num{font-family:var(--head);font-weight:700;color:var(--green-deep);font-size:18px}
+.rows h3{font-size:clamp(26px,3vw,38px);font-weight:700;transition:color .25s}
+.rows p{font-size:16px;margin-top:6px;max-width:460px}
+.rows .arr{width:44px;height:44px;border-radius:50%;border:2px solid var(--char);display:grid;place-items:center;transition:.25s}
+.rows .arr svg{width:18px;height:18px}
+.rows a:hover{background:var(--green);padding-left:36px}
+.rows a:hover .num,.rows a:hover h3{color:var(--ink)}
+.rows a:hover .arr{background:var(--ink);border-color:var(--ink);color:#fff;transform:rotate(-45deg)}
+
+/* guarantee */
+.guarantee{background:var(--char);color:#e9e9e9;position:relative;overflow:hidden;padding:110px 0}
+.guarantee::before{content:"200%";position:absolute;left:-1%;top:50%;transform:translateY(-50%);font-family:var(--head);font-weight:800;font-size:clamp(200px,34vw,480px);line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.09);pointer-events:none}
+.guarantee .wrap{position:relative;display:grid;grid-template-columns:260px 1fr;gap:70px;align-items:center;justify-content:end}
+.guarantee .badge{width:260px;grid-column:1;filter:drop-shadow(0 20px 30px rgba(0,0,0,.45))}
+.guarantee h2{color:#fff;font-size:clamp(36px,4.6vw,64px);margin-bottom:20px}
+.guarantee h2 em{font-style:normal;color:var(--green)}
+.guarantee p{font-size:20px;max-width:560px;margin-bottom:30px}
+
+/* about + subscribe */
+.about{padding:120px 0}
+.about .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:start}
+.about h2{font-size:clamp(34px,4vw,54px);margin-bottom:24px}
+.about p{font-size:19px;max-width:620px}
+.about .facts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.chip{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--char);border-radius:100px;padding:8px 18px;font-weight:700;font-size:15px}
+.chip i{width:10px;height:10px;border-radius:50%;background:var(--green)}
+.sub{background:var(--green);border-radius:8px;padding:38px 34px;color:#1f2d0c;position:relative}
+.sub::before{content:"";position:absolute;right:26px;top:-16px;width:34px;height:34px;background:var(--orange);transform:rotate(45deg);border-radius:4px}
+.sub h3{font-size:30px;margin-bottom:10px}
+.sub p{font-size:16px;margin-bottom:22px;color:#1f2d0c}
+.sub .field{margin-bottom:14px}
+.sub .field label{color:#1f2d0c}
+.sub .field input{background:#fff;border-color:transparent}
+.sub .btn{width:100%;justify-content:center}
+
+/* footer */
+footer{background:var(--ink);color:#cfcfcf;padding:80px 0 0}
+.fgrid{display:grid;grid-template-columns:1.3fr .7fr 1fr;gap:60px;padding-bottom:60px}
+footer .flogo{height:64px;width:auto;filter:brightness(0) invert(1);margin-bottom:22px}
+footer h4{font-family:var(--head);color:#fff;font-size:18px;margin-bottom:18px}
+footer ul{list-style:none}
+footer li{margin-bottom:10px}
+footer a:hover{color:var(--green)}
+.social{display:flex;gap:12px;margin-top:20px}
+.social a{width:44px;height:44px;border:2px solid #555;border-radius:50%;display:grid;place-items:center;transition:.2s}
+.social a:hover{background:var(--green);border-color:var(--green);color:var(--ink)}
+.social svg{width:18px;height:18px;fill:currentColor}
+.fbar{border-top:1px solid #444;padding:22px 0;font-size:14px}
+.fbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.fbar a{color:#fff;font-weight:700;border-bottom:2px solid var(--green)}
+.fbar a:hover{color:var(--green)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero-badge{animation:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:1000px){
+  .hero .wrap,.why .wrap,.about .wrap,.services .wrap{grid-template-columns:1fr}
+  .hero::before{width:100%;right:0;top:48%;clip-path:polygon(0 12%,100% 0,100% 100%,0 100%)}
+  .hero{padding-bottom:120px}
+  .hero-art{min-height:420px}
+  .offer{left:0}
+  .ticket{grid-template-columns:1fr}
+  .ticket-label::after{display:none}
+  .ticket-label{padding:22px 26px}
+  .ticket-label strong span{display:inline}
+  .ticket form{grid-template-columns:1fr 1fr}
+  .ticket form .btn{grid-column:1/-1;justify-content:center}
+  .services .side{position:static}
+  .guarantee .wrap{grid-template-columns:1fr;gap:36px}
+  .guarantee .badge{width:200px}
+  .fgrid{grid-template-columns:1fr 1fr;gap:40px}
+  .fgrid>div:first-child{grid-column:1/-1}
+  nav.main{position:absolute;left:0;right:0;top:84px;background:var(--paper);flex-direction:column;align-items:flex-start;padding:10px 24px 26px;gap:6px;border-bottom:1px solid var(--line);display:none}
+  nav.main.open{display:flex}
+  nav.main a{padding:12px 0;font-size:19px}
+  .burger{display:block}
+  header.site .wrap>.btn{display:none}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .topbar .wrap{justify-content:center;text-align:center}
+  .topbar .addr{display:none}
+  .ticket form{grid-template-columns:1fr;padding:24px}
+  .hero-badge{width:96px}
+  .rows a{grid-template-columns:40px 1fr 40px;padding:24px 8px}
+  .rows a:hover{padding-left:16px}
+  .rows .arr{width:38px;height:38px}
+  .reasons li{grid-template-columns:52px 1fr}
+  .fgrid{grid-template-columns:1fr}
+  .why,.about{padding:80px 0}
+  .guarantee{padding:80px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div><a href="tel:4039993278">403-999-3278</a><span class="sep">|</span><a href="mailto:info@accleaning.ca">info@accleaning.ca</a></div>
+    <div class="addr">358 Hawkstone DR, Calgary, AB</div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Alexanderson Canada, home"><img src="images/logo.png" alt="Alexanderson Canada, Quality Cleaners" width="240" height="109"></a>
+    <nav class="main" id="nav" aria-label="Main">
+      <a class="on" href="#top">Home</a>
+      <a href="#about">About us</a>
+      <a href="#services">Services</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-green" href="#estimate">Free Estimate</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="kicker">Quality Cleaners</div>
+      <h1>Calgary cleaning, <em>residential</em> and commercial.</h1>
+      <p class="lead">We are a commercial and residential cleaner in Calgary, Alberta, with a trained team that adapts to your priorities.</p>
+      <div class="hero-actions">
+        <a class="btn btn-dark" href="#about">Read More</a>
+        <a class="btn btn-line" href="#contact">Contact Now</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="offer"><small>Regular-sized house</small><b><sup>$</sup>120</b><span>for 4 hours of cleaning</span></div>
+      <img class="couple" src="images/couple.png" alt="Happy Alexanderson Canada clients" width="781" height="465">
+      <img class="hero-badge" src="images/guarantee.png" alt="200% satisfaction guarantee badge" width="200" height="200">
+    </div>
+  </div>
+</section>
+
+<div class="ticket-wrap" id="estimate">
+  <div class="wrap">
+    <div class="ticket rv">
+      <div class="ticket-label"><strong><span>Free</span> <span>Estimate</span></strong></div>
+      <form action="#" onsubmit="return false">
+        <div class="field">
+          <label for="bed">Bedrooms</label>
+          <select id="bed" name="bedrooms"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9+</option></select>
+        </div>
+        <div class="field">
+          <label for="bath">Bathrooms</label>
+          <select id="bath" name="bathrooms"><option>1</option><option>1.5</option><option selected>2</option><option>2.5</option><option>3</option><option>3.5</option><option>4</option><option>4.5</option><option>5+</option></select>
+        </div>
+        <button class="btn btn-green" type="submit">Get a Free Estimate</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<section class="why" id="about">
+  <div class="wrap">
+    <figure class="soap rv">
+      <figcaption>Natural cleaning</figcaption>
+      <img src="images/soap.jpg" alt="Natural soap bar tied with a green leaf" width="386" height="286" loading="lazy">
+    </figure>
+    <div class="rv">
+      <h2>Why Calgary calls <em>Alexanderson.</em></h2>
+      <ul class="reasons">
+        <li><span class="n">01</span><div><h3>200% guaranteed</h3><p>If you are unhappy, we will return to re-clean for free.</p></div></li>
+        <li><span class="n">02</span><div><h3>Natural cleaning</h3><p>We use safe, non-chemical products. Safe for your family and your pets.</p></div></li>
+        <li><span class="n">03</span><div><h3>Expert teams of two cleaners</h3><p>Our cleaners must pass rigorous exams, and we send them in teams of two.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="side rv">
+      <div class="kicker">Services</div>
+      <h2>What we offer</h2>
+      <p>Commercial and residential cleaning across Calgary, Alberta.</p>
+      <a class="btn btn-green" href="#estimate">Free Estimate</a>
+    </div>
+    <div class="rows rv">
+      <a href="#contact"><span class="num">01</span><div><h3>Regular Cleaning</h3></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a href="#contact"><span class="num">02</span><div><h3>Move in/out cleaning</h3></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a href="#contact"><span class="num">03</span><div><h3>Commercial Cleaning</h3></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a href="#contact"><span class="num">04</span><div><h3>Carpet Cleaning</h3><p>We handle everything, including moving furniture.</p></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a href="#contact"><span class="num">05</span><div><h3>After Construction Cleaning</h3></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a href="#contact"><span class="num">06</span><div><h3>Deep Cleaning</h3></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="guarantee" id="faq">
+  <div class="wrap">
+    <img class="badge rv" src="images/guarantee.png" alt="200% satisfaction guarantee" width="200" height="200" loading="lazy">
+    <div class="rv">
+      <h2>Not happy? We come back and <em>re-clean for free.</em></h2>
+      <p>That is our 200% guarantee. Safe products, trained teams of two, and a promise we stand behind.</p>
+      <a class="btn btn-green" href="#estimate">Get a Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="contact">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">About us</div>
+      <h2>A commercial and residential cleaner in Calgary.</h2>
+      <p>We are a commercial and residential cleaner in Calgary, Alberta, with a trained team that adapts to your priorities.</p>
+      <div class="facts">
+        <span class="chip"><i></i>Residential</span>
+        <span class="chip"><i></i>Commercial</span>
+        <span class="chip"><i></i>Calgary, Alberta</span>
+      </div>
+    </div>
+    <form class="sub rv" action="#" onsubmit="return false">
+      <h3>Subscribe</h3>
+      <p>Join our email newsletter for news and offers.</p>
+      <div class="field"><label for="em">Email</label><input id="em" type="email" placeholder="you@example.com" required></div>
+      <button class="btn btn-dark" type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap fgrid">
+    <div>
+      <img class="flogo" src="images/logo.png" alt="Alexanderson Canada, Quality Cleaners" width="240" height="109" loading="lazy">
+      <p>358 Hawkstone DR, Calgary, AB<br><a href="tel:4039993278">403-999-3278</a><br><a href="mailto:info@accleaning.ca">info@accleaning.ca</a></p>
+      <div class="social">
+        <a href="https://www.facebook.com/alexandersoncanada" aria-label="Facebook" rel="noopener" target="_blank"><svg viewBox="0 0 24 24"><path d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2h-2.6C11.3 2 10 3.700 10 6v2H7.500v3H10v11h4V11h2.800l.4-3z"/></svg></a>
+        <a href="https://twitter.com/a_ccleaning" aria-label="Twitter" rel="noopener" target="_blank"><svg viewBox="0 0 24 24"><path d="M22 5.900c-.7.300-1.500.5-2.300.6.800-.5 1.500-1.300 1.800-2.200-.8.500-1.700.8-2.600 1a4.100 4.100 0 0 0-7 3.700A11.600 11.600 0 0 1 3.500 4.700a4.100 4.100 0 0 0 1.300 5.500c-.7 0-1.300-.2-1.900-.5 0 2 1.400 3.700 3.300 4.100-.6.200-1.200.2-1.800.1.500 1.600 2 2.800 3.800 2.800A8.300 8.300 0 0 1 2 18.400 11.600 11.600 0 0 0 8.300 20.200c7.500 0 11.700-6.300 11.700-11.700v-.5c.8-.6 1.500-1.300 2-2.100z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Menu</h4>
+      <ul><li><a href="#top">Home</a></li><li><a href="#about">About us</a></li><li><a href="#services">Services</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul><li>Regular Cleaning</li><li>Move in/out cleaning</li><li>Commercial Cleaning</li><li>Carpet Cleaning</li><li>After Construction Cleaning</li><li>Deep Cleaning</li></ul>
+    </div>
+  </div>
+  <div class="fbar"><div class="wrap">
+    <span>&copy; 2026 Alexanderson Canada. All Rights Reserved.</span>
+    <span>Design by <a href="https://cleanningdigital.com/" rel="noopener" target="_blank">Cleaning Digital</a>.</span>
+  </div></div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
