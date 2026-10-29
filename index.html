@@ -42,8 +42,8 @@ header.site{position:absolute;top:0;left:0;right:0;z-index:40}
 .hbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:112px}
 .nav-l,.nav-r{display:flex;gap:34px;align-items:center}
 .nav-r{justify-content:flex-end}
-header.site a.l{font-weight:700;font-size:16px;color:var(--ink);position:relative}
-header.site a.l::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--ink);transition:width .25s}
+header.site a.l{font-weight:700;font-size:16px;color:#fff;position:relative}
+header.site a.l::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--green);transition:width .25s}
 header.site a.l:hover::after{width:100%}
 .logo{background:#fff;border-radius:0 0 28px 28px;padding:12px 26px 14px;box-shadow:0 14px 30px rgba(35,35,35,.14);align-self:start}
 .logo img{height:74px;width:auto}
@@ -52,25 +52,39 @@ header.site a.l:hover::after{width:100%}
 .mnav{display:none}
 
 /* ---------- hero ---------- */
-.hero{position:relative;background:var(--green);padding:200px 0 150px;overflow:hidden;isolation:isolate}
+.hero{position:relative;background:var(--ink);padding:190px 0 170px;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;z-index:-2;width:1000px;height:1000px;right:-260px;top:-300px;background:radial-gradient(circle,rgba(130,184,64,.6),transparent 62%)}
+.hero::after{content:"";position:absolute;z-index:-2;width:760px;height:760px;left:-280px;bottom:-380px;background:radial-gradient(circle,rgba(245,138,31,.32),transparent 62%)}
 .bubbles{position:absolute;inset:0;z-index:-1;pointer-events:none}
-.bubbles i{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.85) 0 6%,rgba(255,255,255,.22) 7% 48%,rgba(255,255,255,.1) 70%);border:1.5px solid rgba(255,255,255,.55);animation:float var(--d,14s) ease-in-out infinite alternate}
-.bubbles i:nth-child(1){width:150px;height:150px;left:4%;top:34%}
-.bubbles i:nth-child(2){width:64px;height:64px;left:44%;top:22%;--d:11s}
-.bubbles i:nth-child(3){width:260px;height:260px;left:30%;bottom:-90px;--d:18s}
-.bubbles i:nth-child(4){width:38px;height:38px;left:12%;bottom:16%;--d:9s}
-.bubbles i:nth-child(5){width:110px;height:110px;right:3%;top:20%;--d:15s}
-.bubbles i:nth-child(6){width:46px;height:46px;right:30%;bottom:22%;--d:12s}
+.bubbles i{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.7) 0 5%,rgba(255,255,255,.1) 8% 55%,rgba(130,184,64,.12) 80%);border:1.5px solid rgba(255,255,255,.35);animation:float var(--d,14s) ease-in-out infinite alternate}
+.bubbles i:nth-child(1){width:150px;height:150px;left:3%;top:36%}
+.bubbles i:nth-child(2){width:64px;height:64px;left:46%;top:18%;--d:11s}
+.bubbles i:nth-child(3){width:260px;height:260px;left:34%;bottom:-100px;--d:18s}
+.bubbles i:nth-child(4){width:38px;height:38px;left:12%;bottom:18%;--d:9s}
+.bubbles i:nth-child(5){width:110px;height:110px;right:2%;bottom:20%;--d:15s}
+.bubbles i:nth-child(6){width:46px;height:46px;right:36%;top:30%;--d:12s}
 @keyframes float{from{transform:translateY(0)}to{transform:translateY(-34px) translateX(10px)}}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
-.kicker{display:inline-block;font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;background:var(--ink);color:#fff;padding:8px 16px;border-radius:100px;margin-bottom:26px}
-.hero h1{font-size:clamp(46px,6.2vw,96px);letter-spacing:-.03em}
-.hero h1 em{font-style:italic;font-weight:600;color:#fff;display:block;text-shadow:0 2px 0 rgba(35,35,35,.12)}
-.hero p.lead{font-size:20px;color:var(--ink);max-width:520px;margin:26px 0 34px;font-weight:500}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.kicker{display:inline-block;font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;background:var(--green);color:var(--ink);padding:8px 16px;border-radius:100px;margin-bottom:26px}
+.hero h1{font-size:clamp(46px,6vw,92px);letter-spacing:-.03em;color:#fff}
+.hero h1 em{font-style:italic;font-weight:600;color:var(--green);display:block;position:relative;width:fit-content}
+.hero h1 em::after{content:"";position:absolute;left:2%;right:0;bottom:-.04em;height:.09em;background:var(--orange);border-radius:4px;transform:skewX(-20deg)}
+.hero p.lead{font-size:20px;color:#dadada;max-width:520px;margin:30px 0 34px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero .btn-ghost{border-color:#fff;color:#fff}
+.hero .btn-ghost:hover{background:#fff;color:var(--ink)}
+.proof{display:flex;gap:10px;flex-wrap:wrap;margin-top:38px}
+.proof span{display:inline-flex;align-items:center;gap:9px;border:1.5px solid rgba(255,255,255,.28);background:rgba(255,255,255,.06);color:#fff;border-radius:100px;padding:9px 18px 9px 12px;font-weight:700;font-size:15px;backdrop-filter:blur(4px)}
+.proof span::before{content:"";width:20px;height:20px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.500l3.200 3.200L15 6.800' fill='none' stroke='%23232323' stroke-width='2.600' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+
+/* collage stage */
+.stage{position:relative;min-height:660px}
+.ph-a{position:absolute;right:-18px;top:-6px;width:340px;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:26px;border:5px solid #fff;transform:rotate(5deg);box-shadow:0 24px 50px rgba(0,0,0,.5)}
+.ph-b{position:absolute;left:-46px;bottom:-4px;width:210px;height:210px;object-fit:cover;border-radius:50%;border:6px solid var(--green);z-index:3;box-shadow:0 20px 40px rgba(0,0,0,.45)}
+.ph-c{position:absolute;right:-30px;bottom:44px;width:150px;height:150px;aspect-ratio:1/1;object-fit:cover;border-radius:22px;border:5px solid var(--orange);transform:rotate(-7deg);z-index:3;box-shadow:0 18px 36px rgba(0,0,0,.45)}
 
 /* estimate card */
-.est{position:relative;background:#fff;border-radius:30px;padding:34px 30px 30px;box-shadow:0 30px 70px rgba(25,50,5,.3);transform:rotate(1.6deg)}
+.est{position:relative;z-index:2;width:min(430px,100%);margin:96px 0 0 36px;background:#fff;border-radius:30px;padding:34px 30px 30px;box-shadow:0 30px 70px rgba(0,0,0,.45);transform:rotate(-1.6deg)}
 .est h2{font-size:34px;margin-bottom:6px}
 .est h2 span{color:var(--orange)}
 .est .sub{font-size:15px;margin-bottom:22px}
@@ -79,22 +93,22 @@ header.site a.l:hover::after{width:100%}
 .pills{display:grid;grid-template-columns:repeat(9,1fr);gap:6px}
 .pills label{position:relative}
 .pills input{position:absolute;opacity:0;inset:0;cursor:pointer}
-.pills span{display:grid;place-items:center;height:42px;border:2px solid var(--line);border-radius:12px;font-weight:700;font-size:14px;color:var(--char);transition:.15s}
+.pills span{display:grid;place-items:center;height:40px;border:2px solid var(--line);border-radius:12px;font-weight:700;font-size:13.5px;color:var(--char);transition:.15s}
 .pills label:hover span{border-color:var(--green)}
 .pills input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
 .pills input:focus-visible+span{outline:3px solid var(--orange);outline-offset:2px}
 .est .btn{width:100%}
-.sticker{position:absolute;right:-26px;top:-46px;width:132px;height:132px;border-radius:50%;background:var(--orange);color:var(--ink);display:grid;place-content:center;text-align:center;transform:rotate(12deg);box-shadow:0 12px 26px rgba(120,60,0,.3);font-weight:700;line-height:1.1}
+.sticker{position:absolute;right:-28px;top:-52px;width:132px;height:132px;border-radius:50%;background:var(--orange);color:var(--ink);display:grid;place-content:center;text-align:center;transform:rotate(12deg);box-shadow:0 12px 26px rgba(120,60,0,.4);font-weight:700;line-height:1.1}
 .sticker b{font-family:var(--serif);font-size:44px;font-weight:800;display:block}
 .sticker small{font-size:12px;letter-spacing:.06em;text-transform:uppercase}
 .sticker::before{content:"";position:absolute;inset:6px;border-radius:50%;border:2px dashed rgba(35,35,35,.55)}
 
 /* ---------- tape ticker ---------- */
 .tape-wrap{position:relative;z-index:5;margin-top:-62px;height:140px;overflow:hidden}
-.tape{position:absolute;left:-3%;right:-3%;top:34px;background:var(--ink);color:#fff;transform:rotate(-1.6deg);padding:20px 0;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.tape{position:absolute;left:-3%;right:-3%;top:34px;background:var(--green);color:var(--ink);transform:rotate(-1.6deg);padding:20px 0;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.25)}
 .tape-track{display:flex;width:max-content;animation:slide 34s linear infinite}
 .tape-track span{font-family:var(--serif);font-weight:600;font-style:italic;font-size:28px;white-space:nowrap;padding:0 26px;display:flex;align-items:center;gap:52px}
-.tape-track span::after{content:"";width:14px;height:14px;background:var(--green);border-radius:50%}
+.tape-track span::after{content:"";width:14px;height:14px;background:var(--ink);border-radius:50%}
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* ---------- services bento ---------- */
@@ -184,27 +198,37 @@ header.site a.l:hover::after{width:100%}
 .subscribe input:focus{outline:none;border-color:var(--green)}
 
 /* ---------- footer ---------- */
-footer{background:var(--green);color:var(--ink);position:relative;overflow:hidden;padding-top:80px}
-.word{font-family:var(--serif);font-weight:800;font-size:clamp(60px,14.6vw,210px);line-height:.8;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:2px rgba(35,35,35,.35);white-space:nowrap;margin:20px 0 -.06em -.02em;user-select:none}
-.fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:50px;padding-bottom:46px}
-.fgrid h4{font-family:var(--serif);font-size:22px;margin-bottom:14px;color:var(--ink)}
+footer{background:var(--ink);color:#cfcfcf;position:relative;overflow:hidden;isolation:isolate;padding-top:90px}
+footer::before{content:"";position:absolute;z-index:-1;width:900px;height:900px;left:-250px;top:-380px;background:radial-gradient(circle,rgba(130,184,64,.5),transparent 62%)}
+footer::after{content:"";position:absolute;z-index:-1;width:800px;height:800px;right:-300px;bottom:-300px;background:radial-gradient(circle,rgba(245,138,31,.25),transparent 62%)}
+.fcta{display:grid;grid-template-columns:1fr auto;gap:50px;align-items:center;padding-bottom:64px;border-bottom:1px solid rgba(255,255,255,.16)}
+.fcta .kicker{margin-bottom:14px}
+.bigphone{display:block;font-family:var(--serif);font-weight:800;letter-spacing:-.03em;line-height:1;font-size:clamp(44px,8.6vw,128px);color:var(--green);transition:color .25s}
+.bigphone:hover{color:#fff}
+.fcta p{margin-top:18px;font-size:19px;color:#e6e6e6}
+.fcta p a{color:#fff;border-bottom:2px solid var(--green)}
+.fcta-r{display:flex;flex-direction:column;align-items:center;gap:22px}
+.fcta-r img{width:150px;animation:spin 30s linear infinite;filter:drop-shadow(0 14px 22px rgba(0,0,0,.5))}
+.fgrid{display:grid;grid-template-columns:1.2fr .8fr 1fr .8fr;gap:50px;padding:60px 0 20px}
+.fgrid h4{font-family:var(--serif);font-size:22px;margin-bottom:14px;color:#fff}
 .fgrid ul{list-style:none}
 .fgrid li{margin-bottom:8px;font-weight:500}
-.fgrid a:hover{text-decoration:underline}
-.flogo{background:#fff;border-radius:22px;padding:14px 20px;display:inline-block;margin-bottom:22px}
+.fgrid a:hover{color:var(--green)}
+.flogo{background:#fff;border-radius:22px;padding:14px 20px;display:inline-block;margin-bottom:18px}
 .flogo img{height:62px;width:auto}
-.social{display:flex;gap:12px;margin-top:18px}
-.social a{width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;transition:.2s}
-.social a:hover{background:#fff;color:var(--ink)}
-.social svg{width:18px;height:18px;fill:currentColor}
-.fbar{background:var(--ink);color:#cfcfcf;font-size:14px;padding:20px 0}
+.social{display:flex;gap:12px}
+.social a{width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,.3);color:#fff;display:grid;place-items:center;transition:.2s}
+.social a:hover{background:var(--green);border-color:var(--green);color:var(--ink)}
+.social svg{width:19px;height:19px;fill:currentColor}
+.word{font-family:var(--serif);font-weight:800;font-size:clamp(60px,14.6vw,210px);line-height:.8;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.16);white-space:nowrap;margin:10px 0 -.06em -.02em;user-select:none}
+.fbar{background:#141414;color:#bdbdbd;font-size:14px;padding:20px 0;position:relative}
 .fbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .fbar a{color:#fff;font-weight:700;border-bottom:2px solid var(--green)}
 .fbar a:hover{color:var(--green)}
 
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
 .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.bubbles i,.tape-track,.seal svg{animation:none}html{scroll-behavior:auto}.box path{transition:none;stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.bubbles i,.tape-track,.seal svg,.fcta-r img{animation:none}html{scroll-behavior:auto}.box path{transition:none;stroke-dashoffset:0}}
 
 /* ---------- responsive ---------- */
 @media (max-width:1050px){
@@ -217,9 +241,9 @@ footer{background:var(--green);color:var(--ink);position:relative;overflow:hidde
   .mnav.open{display:flex}
   .mnav a{padding:12px 0;font-weight:700;font-size:19px;color:var(--ink);border-bottom:1px solid var(--line)}
   .mnav a.btn{border:0;margin-top:14px;color:var(--ink)}
-  .hero{padding:150px 0 130px}
+  .hero{padding:150px 0 140px}
   .hero .wrap{grid-template-columns:1fr;gap:70px}
-  .est{transform:none;max-width:520px}
+  .stage{min-height:0;max-width:540px;padding-top:50px}.est{transform:none;margin:90px 0 0;width:100%}.ph-a{width:62%;right:-6px}.ph-b{left:-10px;width:150px;height:150px}.ph-c{width:110px;height:110px;right:-6px}
   .why .wrap,.about .wrap{grid-template-columns:1fr;gap:60px}
   .photo{max-width:480px}
   .soapcircle{max-width:340px}
@@ -227,12 +251,20 @@ footer{background:var(--green);color:var(--ink);position:relative;overflow:hidde
   .t3{grid-column:span 6}
   .fgrid{grid-template-columns:1fr 1fr}
   .fgrid>div:first-child{grid-column:1/-1}
+  .fcta{grid-template-columns:1fr}
+  .fcta-r{flex-direction:row;justify-content:flex-start}
+  .fcta-r img{width:110px}
 }
 @media (max-width:620px){
   body{font-size:16px}
   .tile{grid-column:1/-1 !important;min-height:240px}
   .pills{grid-template-columns:repeat(5,1fr)}
-  .sticker{width:108px;height:108px;right:-8px;top:-52px}
+  .sticker{width:96px;height:96px;right:-6px;top:-58px}
+  .sticker b{font-size:30px}
+  .est h2{font-size:29px;max-width:70%}
+  .ph-b,.ph-c{display:none}
+  .ph-a{width:70%}
+  .proof span{font-size:14px}
   .sticker b{font-size:34px}
   .tape-track span{font-size:22px}
   .check li{grid-template-columns:50px 1fr;gap:16px}
@@ -258,7 +290,7 @@ footer{background:var(--green);color:var(--ink);position:relative;overflow:hidde
     <nav class="nav-r" aria-label="Secondary">
       <a class="l" href="#faq">FAQ</a>
       <a class="l" href="#contact">Contact</a>
-      <a class="btn btn-dark" href="#estimate">Free Estimate</a>
+      <a class="btn btn-green" href="#estimate">Free Estimate</a>
     </nav>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -277,12 +309,16 @@ footer{background:var(--green);color:var(--ink);position:relative;overflow:hidde
       <h1>Calgary Cleaning Services. <em>Residential and Commercial.</em></h1>
       <p class="lead">We are a commercial and residential cleaner in Calgary, Alberta, with a trained team that adapts to your priorities.</p>
       <div class="hero-actions">
-        <a class="btn btn-dark" href="#about">Read More</a>
-        <a class="btn btn-ghost" href="#contact">Contact Now</a>
+        <a class="btn btn-green" href="#contact">Contact Now</a>
+        <a class="btn btn-ghost" href="#about">Read More</a>
       </div>
+      <div class="proof"><span>200% guaranteed</span><span>Natural cleaning</span><span>Teams of two cleaners</span></div>
     </div>
-
-    <form class="est" id="estimate" action="#" onsubmit="return false">
+    <div class="stage">
+      <img class="ph-a" src="images/regular-cleaning.jpg" alt="Clean living room in Calgary" width="1200" height="751">
+      <img class="ph-b" src="images/deep-cleaning.jpg" alt="Gloved hand wiping a white kitchen counter" width="800" height="937">
+      <img class="ph-c" src="images/commercial-cleaning.jpg" alt="Clean modern office" width="1200" height="751">
+      <form class="est" id="estimate" action="#" onsubmit="return false">
       <div class="sticker"><div><small>Regular house</small><b>$120</b><small>4 hours</small></div></div>
       <h2>Get a <span>free</span> estimate.</h2>
       <p class="sub">Tell us the size of your home.</p>
@@ -316,6 +352,7 @@ footer{background:var(--green);color:var(--ink);position:relative;overflow:hidde
       </fieldset>
       <button class="btn btn-green" type="submit">Get a Free Estimate</button>
     </form>
+    </div>
   </div>
 </section>
 
@@ -419,24 +456,36 @@ footer{background:var(--green);color:var(--ink);position:relative;overflow:hidde
 </main>
 
 <footer>
-  <div class="wrap">
-    <div class="fgrid">
-      <div>
-        <a class="flogo" href="#top"><img src="images/logo.png" alt="Alexanderson Canada, Quality Cleaners" width="240" height="109" loading="lazy"></a>
-        <p>358 Hawkstone DR, Calgary, AB<br><a href="tel:4039993278"><b>403-999-3278</b></a><br><a href="mailto:info@accleaning.ca">info@accleaning.ca</a></p>
-        <div class="social">
+  <div class="wrap fcta">
+    <div>
+      <span class="kicker">Get a free estimate</span>
+      <a class="bigphone" href="tel:4039993278">403-999-3278</a>
+      <p><a href="mailto:info@accleaning.ca">info@accleaning.ca</a> &nbsp;|&nbsp; 358 Hawkstone DR, Calgary, AB</p>
+    </div>
+    <div class="fcta-r">
+      <img src="images/guarantee.png" alt="200% satisfaction guarantee" width="200" height="200" loading="lazy">
+      <a class="btn btn-green" href="#estimate">Get a Free Estimate</a>
+    </div>
+  </div>
+  <div class="wrap fgrid">
+    <div>
+      <a class="flogo" href="#top"><img src="images/logo.png" alt="Alexanderson Canada, Quality Cleaners" width="240" height="109" loading="lazy"></a>
+      <p>We are a commercial and residential cleaner in Calgary, Alberta.</p>
+    </div>
+    <div>
+      <h4>Menu</h4>
+      <ul><li><a href="#top">Home</a></li><li><a href="#about">About us</a></li><li><a href="#services">Services</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul><li>Regular Cleaning</li><li>Move in/out cleaning</li><li>Commercial Cleaning</li><li>Carpet Cleaning</li><li>After Construction Cleaning</li><li>Deep Cleaning</li></ul>
+    </div>
+    <div>
+      <h4>Follow us</h4>
+      <div class="social">
           <a href="https://www.facebook.com/alexandersoncanada" aria-label="Facebook" rel="noopener" target="_blank"><svg viewBox="0 0 24 24"><path d="M14 8V6.300c0-.8.200-1.300 1.400-1.300H17V2h-2.600C11.300 2 10 3.700 10 6v2H7.500v3H10v11h4V11h2.800l.4-3z"/></svg></a>
           <a href="https://twitter.com/a_ccleaning" aria-label="Twitter" rel="noopener" target="_blank"><svg viewBox="0 0 24 24"><path d="M22 5.900c-.7.300-1.500.5-2.300.6.800-.5 1.500-1.300 1.800-2.200-.8.500-1.700.8-2.600 1a4.100 4.100 0 0 0-7 3.700A11.600 11.600 0 0 1 3.500 4.700a4.100 4.100 0 0 0 1.300 5.500c-.7 0-1.300-.2-1.900-.5 0 2 1.400 3.700 3.300 4.100-.6.200-1.200.2-1.800.1.500 1.600 2 2.800 3.800 2.800A8.300 8.300 0 0 1 2 18.400 11.600 11.600 0 0 0 8.300 20.200c7.500 0 11.700-6.300 11.700-11.700v-.5c.8-.6 1.500-1.300 2-2.100z"/></svg></a>
         </div>
-      </div>
-      <div>
-        <h4>Menu</h4>
-        <ul><li><a href="#top">Home</a></li><li><a href="#about">About us</a></li><li><a href="#services">Services</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <ul><li>Regular Cleaning</li><li>Move in/out cleaning</li><li>Commercial Cleaning</li><li>Carpet Cleaning</li><li>After Construction Cleaning</li><li>Deep Cleaning</li></ul>
-      </div>
     </div>
   </div>
   <div class="wrap"><div class="word" aria-hidden="true">Alexanderson</div></div>
